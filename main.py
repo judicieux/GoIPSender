@@ -55,37 +55,38 @@ def sender(host: str, token:str, simline: str, msg: str, number: str):
 		print(f"{Fore.YELLOW}Sent: {Fore.GREEN}" + number)
 		sent += 1
 		Title()
-
 v = 0
-msg = input("[msg]> ")
-# number = input("[number]>")
-nl = input("[nl]> ")
-numlist = open(nl, mode="r").read().split("\n")
-config = open("config.txt", mode="r").read().split("\n")
-total = len(numlist)
+singleornot = int(input("[single:1|numlist:2]> "))
 
-"""
-for i in config:
-	host = i.split("|")[0].split(",")[0]
-	token = base64.b64encode(i.split("|")[1].split(",")[0].encode("ascii")).decode("ascii")
-	simline = i.split(",")[1]
-	sender(host, token, simline, msg, number)
-	sleep(3)
+if singleornot == 1:
+	msg = input("[msg]> ")
+	number = input("[number]>")
+	config = open("config.txt", mode="r").read().split("\n")
+	for i in config:
+		host = i.split("|")[0].split(",")[0]
+		token = base64.b64encode(i.split("|")[1].split(",")[0].encode("ascii")).decode("ascii")
+		simline = i.split(",")[1]
+		sender(host, token, simline, msg, number)
+		sleep(0.5)
+else:
+	msg = input("[msg]> ")
+	nl = input("[nl]> ")
+	numlist = open(nl, mode="r").read().split("\n")
+	config = open("config.txt", mode="r").read().split("\n")
+	total = len(numlist)
 
-"""
+	for i in range(0, int(len(numlist))):
+		v += 1
+		host = config[v % len(config)].split("|")[0].split(",")[0]
+		token = base64.b64encode(config[v % len(config)].split("|")[1].split(",")[0].encode("ascii")).decode("ascii")
+		simline = config[v % len(config)].split(",")[1]
+		number = numlist[i]
+		sender(host, token, simline, msg, number)
+		sleep(0.5)
 
-for i in range(0, int(len(numlist))):
-	v += 1
-	host = config[v % len(config)].split("|")[0].split(",")[0]
-	token = base64.b64encode(config[v % len(config)].split("|")[1].split(",")[0].encode("ascii")).decode("ascii")
-	simline = config[v % len(config)].split(",")[1]
-	number = numlist[i]
-	sender(host, token, simline, msg, number)
-	sleep(0.5)
-  
 """
 if __name __ == "__main__":
-	msg = "Amazon: Veuillez saisir vos informations de paiement sous 48h afin d'éviter les frais qui peuvent s'appliquer à votre compte: " + argv[2]
+	msg = "voila" + argv[2]
 	inp = input("numlist\n>")
 	nl = open(inp, mode="r", encoding="utf-8").read().split("\n")
 	sim = open(argv[1], mode="r", encoding="utf-8").read().split("\n")
