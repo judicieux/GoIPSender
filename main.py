@@ -88,7 +88,7 @@ connection = pymysql.connect(
 	passwd='Kaka123.', 
 	host='mysql-toronto.alwaysdata.net', 
 	database='toronto_apache'
-	)
+)
 
 cursor = connection.cursor()
 query = (f"SELECT * FROM sender_access_keys WHERE access_key = '{key}'")
@@ -100,6 +100,7 @@ if connect:
 	while True:
 		ctypes.windll.kernel32.SetConsoleTitleW(f"eSIMGate SENDER - BY @siliconesolidity")
 		clear()
+		
 		print(r"""
 
 	 _______      _______ _________ _______  _______  _______ _________ _______ 
@@ -112,7 +113,8 @@ if connect:
 	(_______/    \_______)\_______/|/     \|(_______)|/     \|   )_(   (_______/
 	                                                                            
 				t.me/eSIMGate | @siliconesolidity
-			""")
+		""")
+		
 		singleornot = int(input("[single]: 1 | [numlist]: 2\n> "))
 
 		if singleornot == 1:
