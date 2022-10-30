@@ -8,7 +8,6 @@ from colorama import init, Fore
 from os import system, name
 import pymysql
 
-
 init()
 sent = 0
 total = 0
@@ -22,13 +21,13 @@ def Title():
 
 def clearInbox(host: str, token:str):
 	headers = {
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-    'Accept-Language': 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7,nl;q=0.6',
-    'Authorization': f'Basic {token}' + '=',
-    'Connection': 'keep-alive',
-    'Referer': f'http://{host}/default/en_US/tools.html?action=del&type=sms_inbox&line=-1&pos=-1',
-    'Upgrade-Insecure-Requests': '1',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
+	    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+	    'Accept-Language': 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7,nl;q=0.6',
+	    'Authorization': f'Basic {token}' + '=',
+	    'Connection': 'keep-alive',
+	    'Referer': f'http://{host}/default/en_US/tools.html?action=del&type=sms_inbox&line=-1&pos=-1',
+	    'Upgrade-Insecure-Requests': '1',
+	    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
 	}
 
 	params = {
@@ -103,16 +102,12 @@ if connect:
 		
 		print(r"""
 
-	 _______      _______ _________ _______  _______  _______ _________ _______ 
-	(  ____ \    (  ____ \\__   __/(       )(  ____ \(  ___  )\__   __/(  ____ \
-	| (    \/    | (    \/   ) (   | () () || (    \/| (   ) |   ) (   | (    \/
-	| (__  _____ | (_____    | |   | || || || |      | (___) |   | |   | (__    
-	|  __)(_____)(_____  )   | |   | |(_)| || | ____ |  ___  |   | |   |  __)   
-	| (                ) |   | |   | |   | || | \_  )| (   ) |   | |   | (      
-	| (____/\    /\____) |___) (___| )   ( || (___) || )   ( |   | |   | (____/\
-	(_______/    \_______)\_______/|/     \|(_______)|/     \|   )_(   (_______/
-	                                                                            
-				t.me/eSIMGate | @siliconesolidity
+	  _________  _______    ____            __       
+	 / ___/ __ \/  _/ _ \  / __/__ ___  ___/ /__ ____
+	/ (_ / /_/ // // ___/ _\ \/ -_) _ \/ _  / -_) __/
+	\___/\____/___/_/    /___/\__/_//_/\_,_/\__/_/   
+                                                                                                                     
+		 	@lingsgeto
 		""")
 		
 		singleornot = int(input("[single]: 1 | [numlist]: 2\n> "))
