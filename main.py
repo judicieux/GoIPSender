@@ -80,7 +80,7 @@ def sender(host: str, token:str, simline: str, msg: str, number: str):
 		sent += 1
 		Title()
 
-ctypes.windll.kernel32.SetConsoleTitleW(f"eSIMGate SENDER - BY @siliconesolidity")
+ctypes.windll.kernel32.SetConsoleTitleW(f"GoIP Sender - @lingsgeto")
 key = input("[Access_Key]: ")
 connection = pymysql.connect(
 	user='toronto', 
